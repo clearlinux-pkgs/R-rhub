@@ -1,4 +1,4 @@
-1.0.2
+1.1.0
 R-assertthat
 R-backports
 R-callr
@@ -7,6 +7,7 @@ R-desc
 R-httr
 R-jsonlite
 R-parsedate
+R-pillar
 R-pkgbuild
 R-prettyunits
 R-ps
@@ -14,6 +15,8 @@ R-rappdirs
 R-rcmdcheck
 R-rematch
 R-rprojroot
+R-tibble
+R-uuid
 R-whoami
 R-withr
 R-xopen
