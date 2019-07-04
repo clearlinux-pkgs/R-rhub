@@ -4,44 +4,54 @@
 #
 Name     : R-rhub
 Version  : 1.1.1
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Summary  : Connect to 'R-hub'
 Group    : Development/Tools
 License  : MIT
-Requires: R-backports
+Requires: R-R6
+Requires: R-assertthat
 Requires: R-callr
+Requires: R-cli
+Requires: R-crayon
+Requires: R-curl
 Requires: R-desc
+Requires: R-digest
+Requires: R-httr
+Requires: R-jsonlite
 Requires: R-parsedate
 Requires: R-pillar
-Requires: R-pkgbuild
 Requires: R-prettyunits
-Requires: R-ps
+Requires: R-processx
 Requires: R-rappdirs
 Requires: R-rcmdcheck
 Requires: R-rematch
-Requires: R-rprojroot
 Requires: R-tibble
 Requires: R-uuid
 Requires: R-whoami
-Requires: R-xopen
-BuildRequires : R-backports
+Requires: R-withr
+BuildRequires : R-R6
+BuildRequires : R-assertthat
 BuildRequires : R-callr
+BuildRequires : R-cli
+BuildRequires : R-crayon
+BuildRequires : R-curl
 BuildRequires : R-desc
+BuildRequires : R-digest
+BuildRequires : R-httr
+BuildRequires : R-jsonlite
 BuildRequires : R-parsedate
 BuildRequires : R-pillar
-BuildRequires : R-pkgbuild
 BuildRequires : R-prettyunits
-BuildRequires : R-ps
+BuildRequires : R-processx
 BuildRequires : R-rappdirs
 BuildRequires : R-rcmdcheck
 BuildRequires : R-rematch
-BuildRequires : R-rprojroot
 BuildRequires : R-tibble
 BuildRequires : R-uuid
 BuildRequires : R-whoami
-BuildRequires : R-xopen
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -55,13 +65,13 @@ architectures, from the command line. The current architectures include
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1554737239
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562208790
 
 %install
-export SOURCE_DATE_EPOCH=1554737239
+export SOURCE_DATE_EPOCH=1562208790
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,7 +100,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
