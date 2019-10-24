@@ -4,7 +4,7 @@
 #
 Name     : R-rhub
 Version  : 1.1.1
-Release  : 8
+Release  : 9
 URL      : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Summary  : Connect to 'R-hub'
@@ -15,7 +15,6 @@ Requires: R-assertthat
 Requires: R-callr
 Requires: R-cli
 Requires: R-crayon
-Requires: R-curl
 Requires: R-desc
 Requires: R-digest
 Requires: R-httr
@@ -53,6 +52,7 @@ BuildRequires : R-uuid
 BuildRequires : R-whoami
 BuildRequires : R-withr
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 architectures, from the command line. The current architectures include
@@ -66,10 +66,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562208790
+export SOURCE_DATE_EPOCH=1571890535
 
 %install
-export SOURCE_DATE_EPOCH=1562208790
+export SOURCE_DATE_EPOCH=1571890535
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
