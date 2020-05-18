@@ -4,7 +4,7 @@
 #
 Name     : R-rhub
 Version  : 1.1.1
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rhub_1.1.1.tar.gz
 Summary  : Connect to 'R-hub'
@@ -35,7 +35,6 @@ BuildRequires : R-assertthat
 BuildRequires : R-callr
 BuildRequires : R-cli
 BuildRequires : R-crayon
-BuildRequires : R-curl
 BuildRequires : R-desc
 BuildRequires : R-digest
 BuildRequires : R-httr
@@ -52,7 +51,6 @@ BuildRequires : R-uuid
 BuildRequires : R-whoami
 BuildRequires : R-withr
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 architectures, from the command line. The current architectures include
@@ -60,21 +58,22 @@ architectures, from the command line. The current architectures include
 
 %prep
 %setup -q -c -n rhub
+cd %{_builddir}/rhub
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571890535
+export SOURCE_DATE_EPOCH=1589761364
 
 %install
-export SOURCE_DATE_EPOCH=1571890535
+export SOURCE_DATE_EPOCH=1589761364
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
