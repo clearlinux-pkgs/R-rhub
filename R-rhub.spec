@@ -7,7 +7,7 @@
 #
 Name     : R-rhub
 Version  : 2.0.0
-Release  : 37
+Release  : 38
 URL      : https://cran.r-project.org/src/contrib/rhub_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rhub_2.0.0.tar.gz
 Summary  : Tools for R Package Developers
